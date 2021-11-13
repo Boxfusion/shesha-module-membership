@@ -1,4 +1,4 @@
-name: shesha-module-reports-0.x.x
+name: shesha-module-membership-0.x.x
 
 on:
   push:
@@ -27,14 +27,14 @@ jobs:
       # install dependencies
       - name: Install Dependencies
         run: npm install
-      # prepare shesha-module-reports for pipeline
-      - name: Prepare shesha-module-reports for Pipeline
+      # prepare shesha-module-membership for pipeline
+      - name: Prepare shesha-module-membership for Pipeline
         run: npm run prepare
       # build storybook
       - name: Build Storybook
         run: npm run build-storybook
-      # tag shesha-module-reports
-      - name: Tag shesha-module-reports
+      # tag shesha-module-membership
+      - name: Tag shesha-module-membership
         id: tag_version
         uses: mathieudutour/github-tag-action@v5.6
         with:
@@ -47,8 +47,8 @@ jobs:
           version: ${{ steps.tag_version.outputs.new_tag }}
           # package: 'subproject-directory/'
           # git-tag-version: 'true'
-      # build shesha-module-reports for production
-      - name: Build shesha-module-reports for Production
+      # build shesha-module-membership for production
+      - name: Build shesha-module-membership for Production
         run: npm run build
       # create github release
       - name: Create Github Release
@@ -57,8 +57,8 @@ jobs:
           tag: ${{ steps.tag_version.outputs.new_tag }}
           name: ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.tag_version.outputs.changelog }}
-      # publish shesha-module-reports to npmjs
-      - name: Publish shesha-module-reports to npmjs
+      # publish shesha-module-membership to npmjs
+      - name: Publish shesha-module-membership to npmjs
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPMJS_API_KEY }}
