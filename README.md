@@ -1,5 +1,7 @@
 ## Shesha Module Boilerplate
 
+[![shesha-module-membership-0.x.x](https://github.com/Boxfusion/shesha-module-membership/actions/workflows/shesha-module-membership-0.x.x.yml/badge.svg)](https://github.com/Boxfusion/shesha-module-membership/actions/workflows/shesha-module-membership-0.x.x.yml)
+
 # Getting started
 
 #### Familiar with Git?
